@@ -2,15 +2,25 @@ import axios from 'axios'
 
 export const getCapsules = async () => {
 
-    try{
+    try {
         const res = await axios.get(`https://api.spacexdata.com/v3/capsules`);
         console.log(res.data);
 
-        return res.data;    
+        return res.data;
     }
-    catch(error){
+    catch (error) {
         return error
-    }    
+    }
+};
 
-    
+export const getCapsulesDetails = async (idCapsule) => {
+    try {
+        const res = await axios.get(`https://api.spacexdata.com/v3/capsules/`+ idCapsule);
+        console.log(res.data);
+
+        return res.data;
+    }
+    catch (error) {
+        return error
+    }
 };
