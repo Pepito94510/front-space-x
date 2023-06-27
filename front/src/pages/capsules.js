@@ -11,7 +11,7 @@ const Capsules = () => {
             return true;
         }
         fetchData();
-    });
+    },[capsules]);
     return (
         <>
             <div>
@@ -50,12 +50,13 @@ const Capsules = () => {
                     <tbody>
                         {
                             capsules.map((capsule) =>
-                                <tr>
+                                <tr href={"/capsule/" + capsule.capsule_serial}>
                                     <td>{capsule.capsule_serial}</td>
                                     <td>{capsule.status}</td>
                                     <td>{capsule.type}</td>
                                     <td>{capsule.details}</td>
-                                </tr>)
+                                </tr>
+                            )
                         }
                     </tbody>
                 </table>
